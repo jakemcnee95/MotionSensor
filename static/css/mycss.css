@@ -1,0 +1,8 @@
+table, tr, td {
+        border: 1px solid black;
+        table-layout: auto;
+        width: 180px;
+        height:180px;
+
+
+    }

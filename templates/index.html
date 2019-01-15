@@ -1,0 +1,102 @@
+<html>
+<head>
+<!--- import scripts --->
+    <title>TicTac.IO</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+    <script src="/static/js/myJS.js"></script>
+    <script src="/static/js/myJavascript.js"></script>
+</head>
+<body style="background-color:skyblue;font-family:'Audiowide';font-size: 22px;">
+
+<style>
+
+.table-container {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  background-color: black;
+  padding: 1px;
+}
+
+.table-boxes {
+    background-color: #EEE8AA;
+    border: 1px solid black;
+    padding: 40px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.button {
+    background-color: #D8F2D0;
+    border: none;
+    border-radius: 8px;
+    color: black;
+    padding: 0px;
+    text-align: center;
+    align: center;
+    font-size: 16px;
+    width: 33%;
+    height: 10%;
+}
+
+.counter-container {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.4%;
+    padding: 1px;
+}
+
+.counter-boxes {
+    background-color: #D3D3D3;
+    margin-right: 20px;
+    border: 1px solid black;
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    height: 40px;
+}
+    #header1 {float: left; width: 30%;}
+    #header2 {overflow: hidden; width: 30%;}
+    #header3 {float: left;}
+
+</style>
+
+
+
+
+<!--- headings --->
+<h1 id = 'title' style="text-align:center; color:blue;">Motion Sensor</h1>
+<h2> Previous 4 received inputs from motion sensor</h2>
+
+<!--- Input movements table --->
+<div class="table-container">
+  <div class="table-boxes" id="#cell1"></div>
+  <div class="table-boxes" id="#cell2"></div>
+  <div class="table-boxes" id="#cell3"></div>
+  <div class="table-boxes" id="#cell4"></div>
+</div>
+
+<p></p>
+
+<!--- Heading for the 3 counters --->
+<div>
+    <div id="header1">Long Signals</div>
+    <div id="header2">Short Signals</div>
+    <div id="header3">Visitors</div>
+</div>
+<hr />
+
+<!--- The 3 counters --->
+<div class="counter-container">
+    <div class="counter-boxes" id="long"></div>
+    <div class="counter-boxes" id="short"></div>
+    <div class="counter-boxes" id="visitors"></div>
+</div>
+
+<!--- Button to reset and toggle LED --->
+<p></p>
+<button class="button" onClick="reset_this()">Reset</button>
+<button class="button" onclick="toggle_LED()">Toggle LED On</button>
+
+
